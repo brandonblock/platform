@@ -54,7 +54,7 @@ export default class LoginController extends React.Component {
         document.title = global.window.mm_config.SiteName;
 
         if (UserStore.getCurrentUser()) {
-            browserHistory.push('/select_team');
+            GlobalActions.redirectUserToDefaultTeam();
         }
 
         AsyncClient.checkVersion();
@@ -203,7 +203,7 @@ export default class LoginController extends React.Component {
                 if (query.redirect_to) {
                     browserHistory.push(query.redirect_to);
                 } else {
-                    browserHistory.push('/select_team');
+                    GlobalActions.redirectUserToDefaultTeam();
                 }
             }
         );

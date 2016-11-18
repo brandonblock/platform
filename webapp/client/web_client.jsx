@@ -14,6 +14,7 @@ class WebClientClass extends Client {
     constructor() {
         super();
         this.enableLogErrorsToConsole(true);
+        this.onTeamStoreChanged = this.onTeamStoreChanged.bind(this);
         TeamStore.addChangeListener(this.onTeamStoreChanged);
     }
 
